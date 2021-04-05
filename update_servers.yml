@@ -4,12 +4,8 @@
   become: true
   tasks:
 
-  - name: update repository index
+  - name: update repository index and update servers
     apt:
       update_cache: yes
-    when: ansible_distribution in ["Debian", "Ubuntu"]
-
-  - name: update servers
-    apt:
       upgrade: yes
     when: ansible_distribution in ["Debian", "Ubuntu"]
