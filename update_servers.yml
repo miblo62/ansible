@@ -7,7 +7,9 @@
   - name: update repository index
     apt:
       update_cache: yes
+    when: ansible_distribution in ["Debian", "Ubuntu"]
 
   - name: update servers
     apt:
       upgrade: yes
+    when: ansible_distribution in ["Debian", "Ubuntu"]
